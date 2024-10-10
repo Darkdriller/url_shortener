@@ -1,0 +1,33 @@
+{% extends '_base.html' %} {% block content %}
+<div class="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold mb-4 text-gray-800">
+    URL Shortened Successfully
+  </h2>
+  <p class="mb-4 text-gray-600">Your shortened URL is:</p>
+  <div class="bg-gray-100 p-4 rounded-md">
+    <a
+      href="/{{ short_url }}"
+      class="text-blue-600 hover:text-blue-800 break-all"
+    >
+      {{ request.build_absolute_uri }}/{{ short_url }}
+    </a>
+  </div>
+  <p class="mt-6 text-gray-600">
+    You will be redirected to the homepage in
+    <span id="countdown">5</span> seconds.
+  </p>
+</div>
+
+<script>
+  let seconds = 5;
+  const countdownElement = document.getElementById("countdown");
+  const countdownInterval = setInterval(() => {
+    seconds--;
+    countdownElement.textContent = seconds;
+    if (seconds <= 0) {
+      clearInterval(countdownInterval);
+      window.location.href = "{% url 'shorten_url' %}";
+    }
+  }, 1000);
+</script>
+{% endblock content %}

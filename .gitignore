@@ -1,0 +1,43 @@
+# Python environment
+env/
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.pot
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Django specific
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.env
+*.local
+*.DS_Store
+*.coverage
+*.coverage.*
+*.migrations/
+*.swp
+*.swo
+
+# IDE specific
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints
